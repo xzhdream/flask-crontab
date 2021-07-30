@@ -7,6 +7,10 @@
 This project is strongly inspired by [django-crontab](https://github.com/kraiz/django-crontab), and only works on Python 3.5+.
 Due to the coming EOL of Python 2 on 2020/01/01, there is no plan for Python 2 support.
 
+## Fork and Change reason
+I use the project to cron send monitor mail, and the monitor filter message can changed, so i changed it make it can clean all jobs in flask only once
+
+
 ## Quick Start
 
 Install via `pip`:
