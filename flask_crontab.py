@@ -206,7 +206,7 @@ class _Crontab:
                 if self.verbose:
                     print(
                         "Removing cronjob: {} -> {}".format(
-                            job_hash, self.__get_job_by_hash(job_hash).func_ident
+                            job_hash, self.__get_job_by_hash(job_hash, raise_ex=False).func_ident
                         )
                     )
 
@@ -248,7 +248,7 @@ class _Crontab:
                 logger.exception("Error unlocking %s", lock_file_name)
                 return
 
-    def __get_job_by_hash(self, job_hash):
+    def __get_job_by_hash(self, job_hash, raise_ex=True):
         """
         Finds the job by given hash
         """
