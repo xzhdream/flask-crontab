@@ -255,11 +255,13 @@ class _Crontab:
         for job in self.jobs:
             if job.hash == job_hash:
                 return job
-        raise RuntimeError(
-            "No job with hash %s found. It seems the crontab is out of sync with your "
-            'application. Run "flask crontab add" again to resolve this issue!'
-            % job_hash
-        )
+            
+        if raise_ex:
+            raise RuntimeError(
+                "No job with hash %s found. It seems the crontab is out of sync with your "
+                'application. Run "flask crontab add" again to resolve this issue!'
+                % job_hash
+            )
 
 
 def common_options(f):
